@@ -14,6 +14,16 @@ def log_in(login_page, valid_phone, valid_otp):
     login_page.login(valid_phone, valid_otp)
 
 
+@when("I submit valid personal details")
+def submit_valid_details(personal_details_page, valid_personal_details):
+    personal_details_page.submit(
+        valid_personal_details["full_name"],
+        valid_personal_details["national_id"],
+        valid_personal_details["email"],
+        valid_personal_details["date_of_birth"]
+    )
+
+
 @when(parsers.parse('I enter full name "{name}"'))
 def enter_full_name(personal_details_page, name):
     personal_details_page.enter_full_name(name)

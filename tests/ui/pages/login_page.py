@@ -7,6 +7,7 @@ from pages.base_page import BasePage
 
 class LoginPage(BasePage):
     # Locators
+    PAGE_HEADING = 'h1:has-text("First-Time Loan Application")'
     START_APPLICATION_BTN = '.btn-primary:has-text("Start Application")'
     PHONE_INPUT = 'input#phone'
     SEND_OTP_BTN = '.btn-primary:has-text("Send OTP")'

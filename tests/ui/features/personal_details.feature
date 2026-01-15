@@ -9,11 +9,7 @@ Feature: Personal Details
 
 
     Scenario: User can submit valid personal details
-        When I enter full name "John Doe"
-        And I enter national ID "CM12345678"
-        And I enter email "john@example.com"
-        And I enter date of birth "1990-05-15"
-        And I click next
+        When I submit valid personal details
         Then I should see the loan details page
 
 

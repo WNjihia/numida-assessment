@@ -8,9 +8,9 @@ from pages.base_page import BasePage
 class LoginPage(BasePage):
     # Locators
     START_APPLICATION_BTN = '.btn-primary:has-text("Start Application")'
-    PHONE_FIELD = 'input#phone'
+    PHONE_INPUT = 'input#phone'
     SEND_OTP_BTN = '.btn-primary:has-text("Send OTP")'
-    OTP_FIELD = 'input#otp'
+    OTP_INPUT = 'input#otp'
     VERIFY_BTN = '.btn-primary:has-text("Verify")'
     BACK_BTN = '.btn-secondary:has-text("Back")'
     ERROR_MSG = '.error-message'
@@ -32,10 +32,10 @@ class LoginPage(BasePage):
         return self.click(self.BACK_BTN)
     
     def enter_phone(self, phone):
-        return self.fill(self.PHONE_FIELD, phone)
+        return self.fill(self.PHONE_INPUT, phone)
     
     def enter_otp(self, otp):
-        return self.fill(self.OTP_FIELD, otp)
+        return self.fill(self.OTP_INPUT, otp)
     
     def get_error_message(self):
         if self.is_visible(self.ERROR_MSG):

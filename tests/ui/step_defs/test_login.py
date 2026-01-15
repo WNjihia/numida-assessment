@@ -53,6 +53,7 @@ def assert_personal_details_page_loaded(personal_details_page):
 def assert_invalid_phone_error_message(login_page, error_msg):
     login_page.assert_error_msg(error_msg)
 
+
 @then("I should see the phone input screen")
 def assert_phone_input_screen_loaded(login_page):
     login_page.assert_phone_input_screen()

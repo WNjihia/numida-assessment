@@ -10,8 +10,8 @@ scenarios('../features/personal_details.feature')
 
 
 @given("I am logged in as a new applicant")
-def log_in(login_page, valid_phone, valid_otp):
-    login_page.login(valid_phone, valid_otp)
+def log_in(login_page, test_phone, valid_otp):
+    login_page.login(test_phone, valid_otp)
 
 
 @when("I submit valid personal details")

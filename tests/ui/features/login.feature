@@ -7,7 +7,7 @@ Feature: Authentication
     Scenario: User can log in with valid phone number and OTP
         Given I am on the application homepage
         When I click start application
-        And I enter phone number "+254719000000"
+        And I enter a new phone number
         And I click send OTP
         And I enter OTP "0000"
         And I click verify

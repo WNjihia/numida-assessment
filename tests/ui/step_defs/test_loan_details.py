@@ -53,5 +53,5 @@ def remain_on_loan_details(loan_details_page):
 
 
 @then(parsers.parse('I should see the error message "{error_msg}"'))
-def assert_invalid_phone_error_message(login_page, error_msg):
-    login_page.assert_error_msg(error_msg)
+def assert_loan_error_message(loan_details_page, error_msg):
+    loan_details_page.assert_error_msg(error_msg)

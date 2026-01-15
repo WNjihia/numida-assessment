@@ -24,6 +24,11 @@ def enter_phone(login_page, phone):
     login_page.enter_phone(phone)
 
 
+@when("I enter a new phone number")
+def enter_new_phone(login_page, test_phone):
+    login_page.enter_phone(test_phone)
+
+
 @when("I click send OTP")
 def click_send_otp(login_page):
     login_page.click_send_otp_btn()

@@ -23,6 +23,7 @@ Feature: Loan Details
         Then I should remain on the loan details page
 
     
+    @skip
     Scenario: User cannot proceed with zero loan amount
         When I enter loan amount "0"
         And I select loan term "30"

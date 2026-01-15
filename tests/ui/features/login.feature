@@ -4,6 +4,7 @@ Feature: Authentication
     So that I can access the loan application
 
 
+    @smoke
     Scenario: User can log in with valid phone number and OTP
         Given I am on the application homepage
         When I click start application

@@ -8,6 +8,7 @@ Feature: Loan Details
         Given I am logged in and on the loan details page
 
     
+    @smoke
     Scenario: User can submit valid loan details
         When I enter loan amount "50000"
         And I select loan term "30"

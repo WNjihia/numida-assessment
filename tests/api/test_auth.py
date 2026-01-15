@@ -1,6 +1,7 @@
 """
 Tests for /api/auth/request-otp and /api/auth/verify-otp endpoints
 """
+import pytest
 import requests
 
 
@@ -78,6 +79,7 @@ class TestRequestOTP:
 class TestVerifyOTP:
     """Tests for POST /api/auth/verify-otp"""
 
+    @pytest.mark.smoke
     def test_verify_otp_with_valid_credentials(self, api_base_url, test_phone, valid_otp):
         """Should successfully verify OTP and return session token"""
         # First request OTP

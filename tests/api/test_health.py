@@ -1,12 +1,14 @@
 """
 Tests for /api/health and root endpoints
 """
+import pytest
 import requests
 
 
 class TestHealthCheck:
     """Tests for GET /api/health"""
 
+    @pytest.mark.smoke
     def test_health_check_returns_healthy(self, api_base_url):
         """Should return healthy status"""
         response = requests.get(f"{api_base_url}/api/health")

@@ -8,6 +8,7 @@ Feature: Personal Details
         Given I am logged in as a new applicant
 
 
+    @smoke
     Scenario: User can submit valid personal details
         When I submit valid personal details
         Then I should see the loan details page

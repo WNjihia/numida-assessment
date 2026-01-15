@@ -70,6 +70,7 @@ class TestApplicationSubmit:
 
         assert response.status_code == 401
 
+    @pytest.mark.smoke
     def test_submit_valid_application(self, api_base_url, auth_headers, valid_application_data):
         """Should successfully submit valid application"""
         response = requests.post(

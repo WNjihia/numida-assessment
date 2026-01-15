@@ -4,6 +4,7 @@ Feature: Loan Decision
     So that I know the outcome of my application
 
 
+    @smoke
     Scenario: User sees approved decision for small loan
         Given I am a new applicant
         When I complete the application with loan amount "40000"

@@ -84,12 +84,52 @@ pytest tests/ -k "login"
 pytest tests/ -k "decision"
 ```
 
-### Run with HTML Report
+## Test Reports
+
+### Generate HTML Report
 
 ```bash
-pip install pytest-html
-pytest tests/ --html=report.html --self-contained-html
+pytest tests/ --html=tests/reports/report.html --self-contained-html
 ```
+
+Opens in any browser with detailed pass/fail status, duration, and error traces.
+
+### Generate JUnit XML Report (CI/CD)
+
+```bash
+pytest tests/ --junitxml=tests/reports/junit.xml
+```
+
+Used by CI tools (GitHub Actions, Jenkins) to display test results in the pipeline UI.
+
+### Generate Both Reports
+
+```bash
+pytest tests/ \
+  --html=tests/reports/report.html \
+  --self-contained-html \
+  --junitxml=tests/reports/junit.xml
+```
+
+### Run Smoke Tests with Reports
+
+```bash
+pytest tests/ -m smoke \
+  --html=tests/reports/smoke-report.html \
+  --self-contained-html \
+  --junitxml=tests/reports/smoke-junit.xml
+```
+
+## CI/CD Integration
+
+A GitHub Actions workflow is configured at `.github/workflows/tests.yml` that:
+- Runs on every push and PR to main
+- Executes smoke tests first, then full suite
+- Generates both HTML and JUnit XML reports
+- Uploads reports as downloadable artifacts (retained 30 days)
+- Displays test results directly in the GitHub PR/Actions UI
+
+## Running Tests
 
 ### Run in Headed Mode (UI Tests)
 
